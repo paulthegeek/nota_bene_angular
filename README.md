@@ -1,5 +1,5 @@
 # What is Nota Bene Angular?
-An simple front end client that uses the notes API
+A simple front end client that uses the notes API
 
 ## Getting Started
 

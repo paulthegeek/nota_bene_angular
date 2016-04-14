@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html ng-app="app">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+    <title>Nota Bene</title>
+  </head>
+  <body>
+    <header>
+      <h1 id="header-title"><a href="index.html">Nota Bene</a></h1>
+    </header>
+
+    <div class="notes-button">
+      <a ui-sref="notes" class="button">View All Notes</a>
+    </div>
+    <div ui-view></div>
+    <script type="text/javascript"
+      charset="utf-8"
+      src="./js/bundle.js">
+    </script>
+  </body>
+</html>

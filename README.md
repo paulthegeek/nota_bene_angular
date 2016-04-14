@@ -3,7 +3,7 @@ A simple front end client that uses the notes API
 
 ## Getting Started
 
-Please make sure you are running the Notes API backend before running this application. To run that application please look at the README which you can find here.
+Please make sure you are running the Notes API backend before running this application. To run that application please look at the README which you can find below.
 
 [Nona Bene API](https://github.com/paulthegeek/nota_bene)
 

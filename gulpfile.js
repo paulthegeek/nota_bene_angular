@@ -1,7 +1,9 @@
 var browserify       = require("browserify"),
     gulp             = require("gulp"),
-    gulp_live_server = require("gulp-live-server"),
-    gulp_sass        = require("gulp-sass");
+    live_server      = require("gulp-live-server"),
+    sass             = require("gulp-sass"),
+    uglify           = require("gulp-uglify"),
+    buffer           = require("vinyl-buffer"),
     source           = require("vinyl-source-stream");
 
     gulp.task("browserify", function() {
@@ -10,6 +12,8 @@ var browserify       = require("browserify"),
       return browser.add("./app/modules/app.module.js")
       .bundle()
       .pipe(source("bundle.js"))
+      .pipe(buffer())
+      .pipe(uglify())
       .pipe(gulp.dest("dist/js"));
     });
 
@@ -26,11 +30,11 @@ var browserify       = require("browserify"),
 
     gulp.task("sass", function () {
       return gulp.src("app/styles/**/*.scss")
-        .pipe(gulp_sass().on("error", gulp_sass.logError))
+        .pipe(sass().on("error", sass.logError))
         .pipe(gulp.dest("dist/"));
     });
 
     gulp.task("serve", ["dist", "browserify"], function() {
-      var server = gulp_live_server.static(["dist"]);
+      var server = live_server.static(["dist"]);
       server.start();
     });

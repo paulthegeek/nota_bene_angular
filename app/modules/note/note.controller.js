@@ -9,6 +9,7 @@
 
   function noteController($http) {
     var noteCtrl = this;
+    console.log("Testing with Sublime");
 
     $http({
       method: "GET",
